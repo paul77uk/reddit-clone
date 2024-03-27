@@ -7,6 +7,7 @@ import LoginModal from "@/components/LoginModal.jsx";
 import { useGenerationStore } from "@/state/idea-generation.js";
 import SignUpModal from "@/components/SignUpModal.jsx";
 import LogoutModal from "@/components/LogoutModal.jsx";
+import HamburgerMenu from "@/components/HamburgerMenu.jsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
   const { openLoginModal } = useGenerationStore();
   const { openSignUpModal } = useGenerationStore();
   const { openLogoutModal } = useGenerationStore();
+  const { openHamburgerMenu } = useGenerationStore();
 
   return (
     <html lang="en">
@@ -32,6 +34,7 @@ export default function RootLayout({ children }) {
             <Navbar />
             <div id="child">{children}</div>
             {openLogoutModal && <LogoutModal />}
+            {openHamburgerMenu && <HamburgerMenu />}
           </>
         )}
       </body>

@@ -189,3 +189,104 @@
   font-size: 14px;
   color: rgb(81, 81, 81);
 }
+
+#create-post-page {
+  background: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#post-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #dedede;
+}
+
+#post-page-cancel-btn {
+  color: #bdbdbd;
+  font-size: 28px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+#post-btn {
+  background: #ff4500;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+#select-community {
+  padding: 10px 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #b0b0b0;
+  border: none;
+}
+
+#select-community-container {
+  border-bottom: 1px solid #dedede;
+  margin: 0 10px;
+}
+
+#post-title-input {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 0;
+  padding-top: 15px;
+  border: none;
+  width: 100%;
+}
+
+::placeholder {
+  color: #8c8c8c;
+}
+
+#post-text-input {
+  font-size: 16px;
+  font-weight: 500;
+  /* padding: 10px; */
+  padding-top: 15px;
+  height: 100px;
+  border: none;
+  width: 100%;
+}
+
+#hamburger-menu {
+  padding: 10px 30px;
+  background: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 200px;
+}
+
+#hamburger-modal-container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 0;
+  top: 62px;
+  left: 0;
+  right: 0;
+}
+
+
+.community-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  font-size: 14px;
+  color: #525252;
+}

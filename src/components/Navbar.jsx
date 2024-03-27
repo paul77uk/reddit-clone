@@ -1,6 +1,5 @@
 "use client";
 
-
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaReddit } from "react-icons/fa";
 import SearchBar from "./SearchBar.jsx";
@@ -13,12 +12,19 @@ import Link from "next/link";
 
 const Navbar = () => {
   const { user } = useGenerationStore();
+  const { openHamburgerMenu, setOpenHamburgerMenu } = useGenerationStore();
 
   return (
     <main id="navbar-container">
       <div id="navbar">
-        <RxHamburgerMenu size={"24px"} color={"#5e5e5e"} />
-        <FaReddit size={"38px"} color="#FF4500" />
+        <RxHamburgerMenu
+          size={"24px"}
+          color={"#5e5e5e"}
+          onClick={() => setOpenHamburgerMenu(!openHamburgerMenu)}
+        />
+        <Link href="/">
+          <FaReddit size={"38px"} color="#FF4500" />
+        </Link>
         <SearchBar />
         {/* <Link href={"/"}>Home</Link>
         <Link href={"/subreddits"}>Subreddit</Link> */}
@@ -33,7 +39,7 @@ const Navbar = () => {
         )}
         {user.id && (
           <>
-            <Link id="create-btn" href={'/submit'}>
+            <Link id="create-btn" href={"/submit"}>
               <HiOutlinePlus size={"28px"} color={"#5e5e5e"} />
             </Link>
             <ProfileImg />
