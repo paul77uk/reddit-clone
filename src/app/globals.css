@@ -281,12 +281,24 @@
   right: 0;
 }
 
-
 .community-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px;
+  padding: 5px;
   font-size: 14px;
   color: #525252;
+}
+
+#communities-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: #939393;
+  padding: 10px 0;
+  text-transform: uppercase;
+}
+
+.line {
+  margin: 15px 0;
+  border-bottom: 1px solid #dedede;
 }
