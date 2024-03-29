@@ -1,6 +1,9 @@
+import SubredditPosts from "@/components/SubredditPosts.jsx";
+import { fetchUser } from "@/lib/fetchUser.js";
 import { prisma } from "@/lib/prisma.js";
 
 const page = async ({ params }) => {
+  const user = await fetchUser();
   const { subredditId } = params;
   const subreddit = await prisma.subreddit.findUnique({
     where: { id: subredditId },
@@ -12,13 +15,7 @@ const page = async ({ params }) => {
 
   return (
     <main>
-      <h3>{subreddit.name}</h3>
-      {posts.map((post) => (
-        <div key={post.id}>
-          <h4>{post.title}</h4>
-          <p>{post.message}</p>
-        </div>
-      ))}
+      <SubredditPosts posts={posts} subreddit={subreddit} user={user}/>
     </main>
   );
 };

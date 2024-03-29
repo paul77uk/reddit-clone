@@ -28,7 +28,6 @@ const LoginModal = () => {
     }
     setUsername("");
     setPassword("");
-    router.push("/");
     router.refresh();
     setOpenLoginModal(false);
     setUser(data.user);

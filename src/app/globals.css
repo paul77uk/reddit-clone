@@ -288,6 +288,7 @@
   padding: 5px;
   font-size: 14px;
   color: #525252;
+  text-decoration: none;
 }
 
 #communities-title {
@@ -302,3 +303,75 @@
   margin: 15px 0;
   border-bottom: 1px solid #dedede;
 }
+
+#add-community {
+  padding-left: 2px;
+  padding-bottom: 6px;
+  font-size: 40px;
+  font-weight: 200;
+}
+
+#create-community-container {
+  font-size: 14px;
+  color: #525252;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+#create-community-modal {
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#create-community-cancel-btn {
+  background: #eaeaea;
+  border-radius: 50%;
+  border: none;
+  font-size: 22px;
+  font-weight: 300;
+  padding: 5px 10px;
+  color: #525252;
+  margin-top: 12px;
+  position: absolute;
+  right: 15px;
+  top: 5px;
+}
+
+#create-community-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: #525252;
+}
+
+#create-community-text-description {
+  font-size: 14px;
+  font-weight: 500;
+  color: #8a8a8a;
+}
+
+#create-community-input {
+  font-size: 16px;
+  width: 90%;
+  padding: 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 20px;
+  background: rgb(224, 224, 224);
+}
+
+#create-community-submit-btn {
+  background: #ff4500;
+  color: white;
+  padding: 16px 0;
+  width: 100%;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  white-space: nowrap;
+}
+

@@ -9,3 +9,15 @@ export const GET = async (req, res) => {
     return NextResponse.json({ success: false, error: error.message });
   }
 };
+
+export const POST = async (req, res) => {
+  try {
+    const { name, userId } = await req.json();
+    const subreddit = await prisma.subreddit.create({
+      data: { name, userId },
+    });
+    return NextResponse.json({ success: true, subreddit });
+  } catch (error) {
+    return NextResponse.json({ success: false, error: error.message });
+  }
+}
