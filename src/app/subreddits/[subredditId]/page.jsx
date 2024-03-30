@@ -11,11 +11,12 @@ const page = async ({ params }) => {
 
   const posts = await prisma.post.findMany({
     where: { subredditId },
+    include: { user: true },
   });
 
   return (
     <main>
-      <SubredditPosts posts={posts} subreddit={subreddit} user={user}/>
+      <SubredditPosts posts={posts} subreddit={subreddit} user={user} />
     </main>
   );
 };

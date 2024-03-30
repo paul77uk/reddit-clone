@@ -180,9 +180,10 @@
 #post-title {
   margin-top: 10px;
   margin-bottom: 6px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  color: rgb(117, 117, 117);
+  color: rgb(78, 78, 78);
+  text-decoration: none;
 }
 
 #post-message {
@@ -375,3 +376,120 @@
   white-space: nowrap;
 }
 
+#subreddit-title {
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+  border-bottom: 1px solid #dedede;
+  margin: 10px 0px;
+}
+
+#username {
+  font-size: 14px;
+  font-weight: 600;
+  color: #525252;
+}
+
+#time-ago {
+  font-size: 13px;
+  font-weight: 400;
+  color: #8a8a8a;
+}
+
+#subreddit-post-title {
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #838383;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 15px;
+}
+
+#community-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#community-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #434343;
+}
+
+#user-name {
+  font-size: 12px;
+  font-weight: 400;
+  color: #303030;
+}
+
+#community-name-timeago {
+  display: flex;
+  gap: 5px;
+}
+
+#post-detail-page-title {
+  padding: 10px 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #525252;
+}
+
+#add-comment-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0;
+  background: white;
+  width: 100%;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(96, 96, 96);
+  border: 1px solid #535353;
+  white-space: nowrap;
+}
+
+#add-icon {
+  font-size: 40px;
+  font-weight: 100;
+}
+
+#add-comment-textarea {
+  margin: 10px 0;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #dedede;
+  border-radius: 20px;
+  width: calc(100% - 20px);
+  height: 100px;
+}
+
+#btns-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+#cancel-comment-btn {
+  background: #dedede;
+  color: #525252;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  white-space: nowrap;
+}
+
+#comment-btn {
+  background: #173fc3;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  white-space: nowrap;
+}

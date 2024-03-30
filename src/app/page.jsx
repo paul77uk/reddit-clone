@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma.js";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 import img from "../../public/reddit-post.svg";
+import Link from "next/link";
 
 export default async function Home() {
   TimeAgo.addDefaultLocale(en);
@@ -23,8 +24,9 @@ export default async function Home() {
             <img src={img.src} width={"25px"} />
             {getSubreddit(post)}
           </div>
-          <div id="post-title">{post.title}</div>
-          <div id="post-message">{post.message}</div>
+          <Link href={`posts/${post.id}`} id="post-title">
+            {post.title}
+          </Link>
           <hr />
         </div>
       ))}

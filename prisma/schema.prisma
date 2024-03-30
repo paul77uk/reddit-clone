@@ -20,6 +20,7 @@ model User {
   subreddits Subreddit[]
   createdAt  DateTime    @default(now())
   posts      Post[]
+  comments   Comment[]
 }
 
 model Subreddit {
@@ -40,4 +41,15 @@ model Post {
   subredditId String
   user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId      String
+  comments    Comment[]
+}
+
+model Comment {
+  id        String   @id @default(uuid())
+  message   String
+  createdAt DateTime @default(now())
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
 }

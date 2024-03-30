@@ -2,21 +2,34 @@
 
 import { useGenerationStore } from "@/state/idea-generation.js";
 import { useEffect } from "react";
+import img from "../../public/reddit-post.svg";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en";
 
 const SubredditPosts = ({ subreddit, posts, user }) => {
   const { setUser } = useGenerationStore();
-  
+  TimeAgo.addDefaultLocale(en);
+   const timeAgo = new TimeAgo("en-US");
+
   useEffect(() => {
     setUser(user);
   }, []);
 
   return (
     <main>
-      <h3>{subreddit.name}</h3>
+      <div id="subreddit-title">
+        <img src={img.src} width="45px" />
+        <h3>{`r/${subreddit.name}`}</h3>
+      </div>
+
       {posts.map((post) => (
         <div key={post.id}>
-          <h4>{post.title}</h4>
-          <p>{post.message}</p>
+          <div id="username">
+            {`u/${post.user.username}`}
+             <span id="time-ago"> {`• ${timeAgo.format(post.createdAt)}`}</span>
+          </div>
+          <div id="subreddit-post-title">{post.title}</div>
+          
         </div>
       ))}
     </main>
