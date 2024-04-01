@@ -493,3 +493,61 @@
   border: none;
   white-space: nowrap;
 }
+
+#comment {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#comment-container {
+ margin-left: 15px;
+}
+
+#comment-user-timeago {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#comment-user {
+  font-size: 12px;
+  font-weight: 700;
+  color: #434343;
+}
+
+#comment-timeago {
+  font-size: 12px;
+  font-weight: 400;
+  color: #626262;
+}
+
+#comment-message {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #525252;
+}
+
+#votes-reply {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #525252;
+}
+
+#votes {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#reply {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #525252;
+}

@@ -4,6 +4,9 @@ import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 import { fetchUser } from "@/lib/fetchUser.js";
 import AddCommentBtn from "@/components/AddCommentBtn.jsx";
+import { HiOutlineChatBubbleLeft } from "react-icons/hi2";
+import { PiArrowFatUp } from "react-icons/pi";
+import { PiArrowFatDown } from "react-icons/pi";
 
 const page = async ({ params }) => {
   const user = await fetchUser();
@@ -22,14 +25,13 @@ const page = async ({ params }) => {
 
   const addComment = async (message) => {
     "use server";
-    const comment = await prisma.comment.create({
+    await prisma.comment.create({
       data: {
         message,
         postId: post.id,
         userId: user.id,
       },
     });
-    console.log(comment);
   };
 
   return (
@@ -52,16 +54,31 @@ const page = async ({ params }) => {
 
       <div id="comments">
         {comments.map((comment) => (
-          <div key={comment.id}>
+          <div key={comment.id} id="comment">
             <div id="comment-user-timeago">
               <div id="comment-user">{comment.user.username}</div>
-              <div id="comment-timeago">{timeAgo.format(comment.createdAt)}</div>
+              <div id="comment-timeago">
+                {`${timeAgo.format(comment.createdAt)}`}
+              </div>
             </div>
-            <div id="comment-message">{comment.message}</div>
+            <div id="comment-container">
+              <div id="comment-message">{comment.message}</div>
+              <div id="votes-reply">
+                <div id="votes">
+                  <PiArrowFatUp size={20} />
+                  {/* {comment.votes} */}
+                  138
+                  <PiArrowFatDown size={20} />
+                </div>
+                <div id="reply">
+                  <HiOutlineChatBubbleLeft size={20} />
+                  Reply
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
-      
     </main>
   );
 };

@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const AddCommentBtn = ({ addComment }) => {
+  const router = useRouter();
   const [openComment, setOpenComment] = useState(false);
   const [text, setText] = useState("");
   return (
@@ -32,6 +34,8 @@ const AddCommentBtn = ({ addComment }) => {
               onClick={() => {
                 addComment(text);
                 setOpenComment(false);
+                setText("");
+                router.refresh();
               }}
             >
               Comment
